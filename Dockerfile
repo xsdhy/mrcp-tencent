@@ -1,15 +1,9 @@
 FROM centos:7
 
 WORKDIR /app
-COPY ./unimrcp.tar.gz .
+COPY unimrcp.tar.gz /app/
+COPY entrypoint.sh /app/
 
-RUN yum update -y && \
-    cd /app && \
-    tar -zxf unimrcp.tar.gz
+RUN yum update -y && tar -zxf unimrcp.tar.gz && yum clean all && chmod +x /app/entrypoint.sh
 
-
-ENTRYPOINT ["/app/unimrcp/admin/change.sh","/app/unimrcp/admin/start_server.sh"]
-
-
-
-CMD ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["/app/entrypoint.sh"]
