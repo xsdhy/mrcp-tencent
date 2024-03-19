@@ -1,6 +1,5 @@
 #!/bin/bash
 
-service crond start
 cd /app/unimrcp/admin
 echo "Running initial configuration script..."
 ./change.sh

@@ -6,4 +6,4 @@ services:
     network_mode: host
     volumes:
       - "/etc/localtime:/etc/localtime"
-      - "./conf.ini:/app/unimrcp/admin/cong.ini"
+      - "conf.ini:/app/unimrcp/admin/conf.ini"
