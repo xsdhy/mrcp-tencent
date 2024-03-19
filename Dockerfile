@@ -3,12 +3,12 @@ FROM centos:7
 WORKDIR /app
 COPY ./unimrcp.tar.gz .
 
-RUN yum update && \
+RUN yum update -y && \
     cd /app && \
     tar -zxf unimrcp.tar.gz
 
 
-ENTRYPOINT ["/app/uunimrcp/admin/change.sh","/app/uunimrcp/admin/start_server.sh"]
+ENTRYPOINT ["/app/unimrcp/admin/change.sh","/app/unimrcp/admin/start_server.sh"]
 
 
 

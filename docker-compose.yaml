@@ -1,0 +1,9 @@
+version: "3"
+services:
+  mrcp:
+    image: 'mrcp'
+    container_name: mrcp
+    network_mode: host
+    volumes:
+      - "/etc/localtime:/etc/localtime"
+      - "./conf.ini:/app/unimrcp/admin/cong.ini"
